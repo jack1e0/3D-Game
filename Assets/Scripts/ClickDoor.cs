@@ -9,17 +9,10 @@ public class ClickDoor : MonoBehaviour
     public Texture2D cursor2;
 
     public static bool exit = false;
-    
-    // Start is called before the first frame update
+
     void Start()
     {
         Cursor.SetCursor(cursor1, Vector2.zero, CursorMode.Auto);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     private void OnMouseEnter()
@@ -34,6 +27,6 @@ public class ClickDoor : MonoBehaviour
 
     private void OnMouseDown()
     {
-        exit = true;
+        BlackFadeIn.instance.StartFade();
     }
 }

@@ -5,26 +5,25 @@ using UnityEngine.SceneManagement;
 
 public class BlackFadeIn : MonoBehaviour
 {
+    public static BlackFadeIn instance;
     public Animator animator;
 
-    // Update is called once per frame
-    void Update()
+    private void Awake()
     {
-        if (ClickDoor.exit)
+        if (instance == null)
         {
-            startFade();
+            instance = this;
         }
     }
 
-    private void startFade()
+    public void StartFade()
     {
         animator.SetTrigger("FadeIn");
     }
 
-    public void changeScene()
+    public void ChangeScene()
     {
         SceneManager.LoadScene(1);
-        Click1Door.hasExitedGame = false;
-        Click1Door.exitGame = false;
+        ClickDoorNextScene.hasExitedGame = false;
     }
 }

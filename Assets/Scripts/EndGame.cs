@@ -5,24 +5,26 @@ using UnityEngine;
 
 public class EndGame : MonoBehaviour
 {
+    public static EndGame instance;
     public Animator animator;
     public Texture2D cursor;
-    
 
-    // Update is called once per frame
-    void Update()
+    private void Awake()
     {
-        if (Click1Door.hasExitedGame)
+        if (instance == null)
         {
-            animator.SetTrigger("HasEnded");
-            Cursor.SetCursor(cursor, Vector2.zero, CursorMode.Auto);
+            instance = this;
         }
     }
 
-    public void endGame()
+    public void End()
+    {
+        animator.SetTrigger("HasEnded");
+        Cursor.SetCursor(cursor, Vector2.zero, CursorMode.Auto);
+    }
+
+    public void GameEnd()
     {
         animator.SetTrigger("hasFaded");
-        
-
     }
 }

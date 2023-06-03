@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-    // Start is called before the first frame update
     private void Awake()
     {
         DontDestroyOnLoad(transform.gameObject);

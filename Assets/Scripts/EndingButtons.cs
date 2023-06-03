@@ -3,19 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Restart : MonoBehaviour
+public class EndingButtons : MonoBehaviour
 {
-    
-    
-    
-    public void restart()
+    public void Restart()
     {
-        
         SceneManager.LoadScene(0);
         ClickDoor.exit = false;
     }
 
-    public void endGame()
+    public void Quit()
     {
         Application.Quit();
         Debug.Log("quit");

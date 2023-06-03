@@ -56,7 +56,7 @@ public class CamMovement : MonoBehaviour
                 atBottom = true;
             }
         }
-        
+
     }
 
     private void top()
@@ -73,7 +73,7 @@ public class CamMovement : MonoBehaviour
         if (transform.position == midPos.transform.position)
         {
             atMid = true;
-            atTop=false;
+            atTop = false;
         }
     }
 
@@ -94,128 +94,4 @@ public class CamMovement : MonoBehaviour
             atBottom = false;
         }
     }
-
-
-    /*
-    Vector Lerp:
-
-    public GameObject cam;
-    private Vector3 midPos;
-    private Vector3 upPos;
-    private Vector3 downPos;
-
-    private float distance = 11f;
-    private float lerpTime = 2f;
-    private float currLerpTime = 0;
-
-    private bool keyHit = false;
-
-    void Start()
-    {
-        midPos = cam.transform.position;
-        upPos = cam.transform.position + Vector3.up * distance;
-        downPos = cam.transform.position + Vector3.down * distance;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-            midToTop();
-            midToDown();
-        
-        
-        if (cam.transform.position == upPos)
-        {
-            topToMid();
-        }
-
-        if (cam.transform.position == downPos)
-        {
-            downToMid();
-        }
-    }
-
-    private void midToTop()
-    {
-        if (Input.GetKeyDown(KeyCode.W))
-        {
-            keyHit = true;
-        }
-
-        if (keyHit)
-        {
-            currLerpTime += Time.deltaTime;
-            if (currLerpTime >= lerpTime)
-            {
-                currLerpTime = lerpTime;
-            }
-
-            float percentage = currLerpTime / lerpTime;
-            cam.transform.position = Vector3.Lerp(midPos, upPos, percentage);
-
-            //currLerpTime = 0;
-        }
-    }
-
-    private void topToMid()
-    {
-        if (Input.GetKeyDown(KeyCode.S))
-        {
-            keyHit = true;
-        }
-
-        if (keyHit)
-        {
-            currLerpTime += Time.deltaTime;
-            if (currLerpTime >= lerpTime)
-            {
-                currLerpTime = lerpTime;
-            }
-
-            float percentage = currLerpTime / lerpTime;
-            cam.transform.position = Vector3.Lerp(upPos, midPos, percentage);
-        }
-    }
-
-    private void midToDown()
-    {
-        if (Input.GetKeyDown(KeyCode.S))
-        {
-            keyHit = true;
-        }
-
-        if (keyHit)
-        {
-            currLerpTime += Time.deltaTime;
-            if (currLerpTime >= lerpTime)
-            {
-                currLerpTime = lerpTime;
-            }
-
-            float percentage = currLerpTime / lerpTime;
-            cam.transform.position = Vector3.Lerp(midPos, downPos, percentage);
-        }
-    }
-
-    private void downToMid()
-    {
-        if (Input.GetKeyDown(KeyCode.W))
-        {
-            keyHit = true;
-        }
-
-        if (keyHit)
-        {
-            currLerpTime += Time.deltaTime;
-            if (currLerpTime >= lerpTime)
-            {
-                currLerpTime = lerpTime;
-            }
-
-            float percentage = currLerpTime / lerpTime;
-            cam.transform.position = Vector3.Lerp(downPos, midPos, percentage);
-        }
-    }
-    */
 }
